@@ -5,13 +5,12 @@ require('dotenv').config({ path: __dirname + '/../.env' });
 const provider = ethers.getDefaultProvider('kovan', {
   infura: 'https://kovan.infura.io/v3/3e1cb74e7369425285a5a988873a54ba',
 });
-
-const contractAbi = abi;
-const contractBytecode = bytecode;
-
 // Confirm secret mnemonic seed phrase is set in .env file
 const walletMnemonic = Wallet.fromMnemonic(process.env.MNEMONIC_PHRASE);
 const signerWallet = walletMnemonic.connect(provider);
+
+const contractAbi = abi;
+const contractBytecode = bytecode;
 
 const deploy = async () => {
   console.log(
