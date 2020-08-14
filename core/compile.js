@@ -31,7 +31,7 @@ const output = JSON.parse(solc.compile(JSON.stringify(input)));
 const compiledContract = output.contracts['Contract.sol']['Contract'];
 
 module.exports = {
-  interface: compiledContract.abi,
+  abi: compiledContract.abi,
   bytecode: compiledContract.evm.bytecode.object,
 };
 
